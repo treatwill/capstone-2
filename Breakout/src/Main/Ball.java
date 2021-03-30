@@ -28,6 +28,10 @@ public class Ball extends BreakoutShape{
         if (getY() + dy < 0) {
             dy = 1;
         }
+        if (getY() + getHeight() + dy > panel.getHeight()) {
+            dy = -1;
+            super.move(dx,dy);
+        }
     }
 
 
