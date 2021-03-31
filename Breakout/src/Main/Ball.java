@@ -14,8 +14,16 @@ public class Ball extends BreakoutShape{
     private BreakoutPanel panel;
 
     public Ball(Color color, BreakoutPanel panel) {
-        super(color, true, new Ellipse2D.Double(START_X, START_Y, SIZE, SIZE));
+        super(color, true, new Ellipse2D.Double(Ball.START_X, Ball.START_Y, Ball.SIZE, Ball.SIZE));
         this.panel = panel;
+    }
+
+    private Ball(Color color, Ellipse2D.Double ellipse){
+        super(color, true, ellipse);
+    }
+
+    public Ball getVirtualBall(){
+        return new Ball(super.getColor(), new Ellipse2D.Double(getX() + dx, getY() + dy, SIZE, SIZE));
     }
 
     public void move() {
@@ -33,7 +41,18 @@ public class Ball extends BreakoutShape{
             super.move(dx,dy);
         }
     }
-
+    public void goUp(){
+        dy = -1;
+    }
+    public void goDown(){
+        dy = 1;
+    }
+    public void goLeft(){
+        dx = -1;
+    }
+    public void goRight(){
+        dx = 1;
+    }
 
 
 

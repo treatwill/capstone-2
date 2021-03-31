@@ -19,6 +19,10 @@ public class BreakoutShape {
         return color;
     }
 
+    protected Rectangle getBounds(){
+        return shape.getBounds();
+    }
+
     public void changeColor(Color color) {
         this.color = color;
     }
@@ -48,8 +52,34 @@ public class BreakoutShape {
         return shape.getWidth();
     }
 
+    public boolean intersects(BreakoutShape other) {
+        return shape.intersects(other.shape.getBounds());
+    }
+
+    public boolean below(BreakoutShape other) {
+        return getY() >= getWidth() + other.getX();
+    }
+
+
+    public boolean above(BreakoutShape other) {
+        return getY() + getHeight() <= other.getX();
+    }
+
+
+    public boolean leftOf(BreakoutShape other) {
+        return getX() + getWidth() <= other.getX();
+    }
+
+
+    public boolean RightOf(BreakoutShape other) {
+        return getX() >= other.getX() + other.getWidth();
+    }
+
+
     public void move(int dx, int dy) {
         shape.setFrame(getX() + dx, getY() + dy, getWidth(), getHeight());
     }
+
+
 
 }
