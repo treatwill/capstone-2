@@ -25,7 +25,7 @@ public class Player {
 
     public void draw(Graphics2D g2) {
         try {
-            Image image = ImageIO.read(new File("player.gif"));
+            Image image = ImageIO.read(new File("src/orange_brick(1).png"));
             for (int x = 0; x < numLives; x++) {
                 g2.drawImage(image, x * (image.getWidth(null) + imgHGap), imgYposition, null);
             }
@@ -33,4 +33,4 @@ public class Player {
         }
     }
 
-    }
+}

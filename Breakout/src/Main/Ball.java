@@ -4,22 +4,22 @@ package Main;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
-public class Ball extends BreakoutShape{
+public class Ball extends Shapes{
     private static final int SIZE = 10;
     private static final int START_X = 200;
     private static final int START_Y = 400;
 
     private int dx = 1;
     private int dy = -1;
-    private BreakoutPanel panel;
+    private Panel panel;
 
-    public Ball(Color color, BreakoutPanel panel) {
-        super(color, true, new Ellipse2D.Double(Ball.START_X, Ball.START_Y, Ball.SIZE, Ball.SIZE));
+    public Ball(Color color, Panel panel) {
+        super(new Ellipse2D.Double(Ball.START_X, Ball.START_Y, Ball.SIZE, Ball.SIZE), color, true);
         this.panel = panel;
     }
 
     private Ball(Color color, Ellipse2D.Double ellipse){
-        super(color, true, ellipse);
+        super(ellipse, color, true);
     }
 
     public Ball getVirtualBall(){

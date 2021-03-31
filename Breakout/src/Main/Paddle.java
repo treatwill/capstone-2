@@ -3,7 +3,7 @@ package Main;
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
-public class Paddle extends BreakoutShape{
+public class Paddle extends Shapes{
 
     private static final int StartX = 200;
     private static final int StartY = 430;
@@ -11,10 +11,10 @@ public class Paddle extends BreakoutShape{
     private static final int Height = 10;
     private static final int Speed = 10;
 
-    private BreakoutPanel panel;
+    private Panel panel;
 
-    public Paddle(Color color, BreakoutPanel panel) {
-        super(color, true, new Rectangle2D.Double(StartX, Paddle.StartY, Paddle.Width, Paddle.Height));
+    public Paddle(Color color, Panel panel) {
+        super(new Rectangle2D.Double(StartX, Paddle.StartY, Paddle.Width, Paddle.Height), color, true);
         this.panel = panel;
     }
 

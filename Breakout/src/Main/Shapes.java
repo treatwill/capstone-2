@@ -3,17 +3,18 @@ package Main;
 import java.awt.*;
 import java.awt.geom.RectangularShape;
 
-public class BreakoutShape {
+public class Shapes {
 
     private Color color;
     private boolean fill;
     private RectangularShape shape;
 
-    public BreakoutShape(Color color, boolean fill, RectangularShape shape) {
+    public Shapes(RectangularShape shape, Color color, boolean fill) {
         this.color = color;
         this.fill = fill;
         this.shape = shape;
     }
+
 
     public Color getColor() {
         return color;
@@ -52,26 +53,26 @@ public class BreakoutShape {
         return shape.getWidth();
     }
 
-    public boolean intersects(BreakoutShape other) {
+    public boolean intersects(Shapes other) {
         return shape.intersects(other.shape.getBounds());
     }
 
-    public boolean below(BreakoutShape other) {
-        return getY() >= getWidth() + other.getX();
+    public boolean below(Shapes other) {
+        return getY() >= other.getY() + other.getX();
     }
 
 
-    public boolean above(BreakoutShape other) {
+    public boolean above(Shapes other) {
         return getY() + getHeight() <= other.getX();
     }
 
 
-    public boolean leftOf(BreakoutShape other) {
+    public boolean leftOf(Shapes other) {
         return getX() + getWidth() <= other.getX();
     }
 
 
-    public boolean RightOf(BreakoutShape other) {
+    public boolean rightOf(Shapes other) {
         return getX() >= other.getX() + other.getWidth();
     }
 
@@ -81,5 +82,6 @@ public class BreakoutShape {
     }
 
 
-
+    public void remove(Brick brick) {
+    }
 }
