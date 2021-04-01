@@ -5,7 +5,7 @@ import java.awt.*;
 import java.io.File;
 
 public class Player {
-    private static int initialNumLives = 3;
+    private static int initialNumLives = 1;
     private static int imageYPosition = 450;
     private static int imageGap = 5;
     private int numLives;
