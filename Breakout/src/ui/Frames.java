@@ -1,5 +1,7 @@
-package Main;
+package ui;
 
+
+import game.Board;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -14,6 +16,7 @@ public class Frames extends JFrame {
 
     private Board board = new Board();
 
+
     public Frames() {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         displayMenu();
@@ -27,6 +30,9 @@ public class Frames extends JFrame {
         JMenuBar menuBar = new JMenuBar();
         menuBar.add(new GameMenu());
         setJMenuBar(menuBar);
+        menuBar.add(new Instructions());
+        setJMenuBar(menuBar);
+
     }
 
 
@@ -43,11 +49,20 @@ public class Frames extends JFrame {
                     System.exit(0);
                 }
             });
-
-
             add(startGameMI);
             add(pauseMI);
             add(quitMI);
+        }
+    }
+    private class Instructions extends JMenu{
+        public Instructions(){
+            super("Instructions");
+            JMenuItem movePaddle = new JMenuItem("Move Paddle", 'M');
+            JMenuItem hitBall = new JMenuItem("Hit Ball", 'H');
+            JMenuItem breakBrick = new JMenuItem("Break Brick", 'B');
+            add(movePaddle);
+            add(hitBall);
+            add(breakBrick);
         }
     }
 }

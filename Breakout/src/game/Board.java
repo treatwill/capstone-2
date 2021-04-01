@@ -1,5 +1,8 @@
-package Main;
+package game;
 
+
+import player.Player;
+import ui.Commons;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -25,7 +28,7 @@ public class Board extends JPanel {
     private Paddle paddle;
     private Brick[] bricks;
     private boolean inGame = true;
-    private Player player = new Player();
+    private final Player player = new Player();
 
     public Board() {
 
@@ -149,7 +152,6 @@ public class Board extends JPanel {
         ball.move();
         paddle.move();
         checkCollision();
-        player.isAlive();
         repaint();
     }
 

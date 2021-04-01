@@ -1,4 +1,4 @@
-package Main;
+package game;
 
 import java.awt.Image;
 import java.awt.Rectangle;
@@ -11,7 +11,7 @@ public class Sprite {
     int imageHeight;
     Image image;
 
-    protected void setX(int x) {
+      void setX(int x) {
 
         this.x = x;
     }
@@ -21,7 +21,7 @@ public class Sprite {
         return x;
     }
 
-    protected void setY(int y) {
+     void setY(int y) {
 
         this.y = y;
     }

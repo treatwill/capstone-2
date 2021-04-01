@@ -1,4 +1,4 @@
-package Main;
+package game;
 
 import javax.swing.ImageIcon;
 
@@ -28,12 +28,12 @@ public class Brick extends Sprite {
         image = ii.getImage();
     }
 
-    boolean isDestroyed() {
+   public boolean isDestroyed() {
 
         return destroyed;
     }
 
-    void setDestroyed(boolean val) {
+   public void setDestroyed(boolean val) {
 
         destroyed = val;
     }

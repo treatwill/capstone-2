@@ -1,4 +1,6 @@
-package Main;
+package game;
+
+import ui.Commons;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
