@@ -35,15 +35,18 @@ public class Frames extends JFrame {
         public GameMenu(){
             super("Game");
             JMenuItem startGameMI = new JMenuItem("Start" , 'S');
-            startGameMI.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK));
+            startGameMI.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
             JMenuItem pauseMI = new JMenuItem("Pause" , 'P');
             pauseMI.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, InputEvent.CTRL_DOWN_MASK));
             JMenuItem quitMI = new JMenuItem("Quit");
-            startGameMI.addActionListener(new ActionListener() {
+          quitMI.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     System.exit(0);
                 }
             });
+
+
+
             add(startGameMI);
             add(pauseMI);
             add(quitMI);

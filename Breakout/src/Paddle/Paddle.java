@@ -1,9 +1,12 @@
-package Main;
+package Paddle;
+
+import Main.Panel;
+import Main.Shapes;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
-public class Paddle extends Shapes{
+public class Paddle extends Shapes {
 
     private static final int StartX = 200;
     private static final int StartY = 430;
@@ -11,7 +14,7 @@ public class Paddle extends Shapes{
     private static final int Height = 10;
     private static final int Speed = 10;
 
-    private Panel panel;
+    private Main.Panel panel;
 
     public Paddle(Color color, Panel panel) {
         super(new Rectangle2D.Double(StartX, Paddle.StartY, Paddle.Width, Paddle.Height), color, true);

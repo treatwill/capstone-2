@@ -1,5 +1,7 @@
 package Main;
 
+import Brick.Brick;
+
 import java.awt.*;
 import java.awt.geom.RectangularShape;
 

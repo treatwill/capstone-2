@@ -6,7 +6,8 @@ Please write a 1-3 paragraphs explaining these 4 concepts further.  Please provi
 
 ********************
 1. Encapsulation
-
+Likes to protect its elements by keeping them private. So it will take data from  a certain class wrap it up and hide it. the info can only be accessed from the given class.
+   as said in geeksforgeek.org
 
 
 

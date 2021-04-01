@@ -1,5 +1,9 @@
 package Main;
 
+import Ball.Ball;
+import Brick.Brick;
+import Paddle.Paddle;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -12,7 +16,7 @@ public class Panel extends JPanel {
     private javax.swing.Timer timer;
     private Ball ball;
     private Paddle paddle;
-    private Player player = new Player();
+    private Player player;
     private boolean gameStarted = false;
     private ArrayList<Brick> bricks;
     private static final int numBrickRows = 10;
@@ -27,6 +31,7 @@ public class Panel extends JPanel {
         timer = new javax.swing.Timer(10, new TimeListener());
         player = new Player();
         createBricks();
+
         addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
                 String s = KeyEvent.getKeyText(e.getKeyCode());
@@ -76,6 +81,7 @@ public class Panel extends JPanel {
     public void start(){
         gameStarted=true;
 
+
         if (timer != null){
             timer.stop();
 
@@ -88,7 +94,6 @@ public class Panel extends JPanel {
         }
             timer = new javax.swing.Timer(BallSpeed.FAST.speed(), new  Panel.TimeListener());
             timer.start();
-            ball.goUp();
             repaint();
     }
 
@@ -159,7 +164,7 @@ public class Panel extends JPanel {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            ball.goUp();
+            start();
         }
     }
 
@@ -170,10 +175,9 @@ public class Panel extends JPanel {
         }
         if (bricks.size()==1){
             bounceBall(ball, new ArrayList<Brick>(Collections.singleton(bricks.get(0))));
-            return;
         }
-     //   ArrayList<Brick> combinedBrick = bricks.get(0);
-     //   bounceBall(ball, combinedBrick);
+        ArrayList<Brick> combinedBrick = bricks.get(0).add(bricks.get(1));
+        bounceBall(ball, combinedBrick);
     }
 
     public void actionPerformed(ActionEvent e){

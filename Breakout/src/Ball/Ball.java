@@ -1,17 +1,21 @@
-package Main;
+package Ball;
 
+
+import Main.Panel;
+import Main.Shapes;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
-public class Ball extends Shapes{
+public class Ball extends Shapes {
     private static final int SIZE = 10;
     private static final int START_X = 200;
     private static final int START_Y = 400;
-
+    public boolean isStop = false;
+    private int speed = 10;
     private int dx = 1;
     private int dy = -1;
-    private Panel panel;
+    private Main.Panel panel;
 
     public Ball(Color color, Panel panel) {
         super(new Ellipse2D.Double(Ball.START_X, Ball.START_Y, Ball.SIZE, Ball.SIZE), color, true);
@@ -27,6 +31,8 @@ public class Ball extends Shapes{
     }
 
     public void move() {
+
+
         if (getX() + dx < 0) {
             dx = 1;
         }
@@ -38,9 +44,13 @@ public class Ball extends Shapes{
         }
         if (getY() + getHeight() + dy > panel.getHeight()) {
             dy = -1;
-            super.move(dx,dy);
+
         }
+        super.move(dx, dy);
+
     }
+
+
     public void goUp(){
         dy = -1;
     }
