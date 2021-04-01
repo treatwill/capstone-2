@@ -1,12 +1,19 @@
 package Main;
 
-public class Breakout {
+
+
+
+import javax.swing.*;
+
+public class Breakout extends JFrame {
+
+
+
     public static void main(String[] args) {
 
-        Frames frame = new Frames();
+        Frames frames = new Frames();
 
-        frame.setVisible(true);
-
+            frames.setVisible(true);
 
 
     }

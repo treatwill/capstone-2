@@ -5,11 +5,11 @@ import java.awt.*;
 import java.io.File;
 
 public class Player {
-
     private static int initialNumLives = 3;
-    private static int imgYposition = 450;
-    private static int imgHGap = 5;
-    private static int numLives;
+    private static int imageYPosition = 450;
+    private static int imageGap = 5;
+    private int numLives;
+
 
     public Player() {
         this.numLives = initialNumLives;
@@ -27,10 +27,17 @@ public class Player {
         try {
             Image image = ImageIO.read(new File("src/orange_brick(1).png"));
             for (int x = 0; x < numLives; x++) {
-                g2.drawImage(image, x * (image.getWidth(null) + imgHGap), imgYposition, null);
+                g2.drawImage(image, x * (image.getWidth(null) + imageGap), imageYPosition, null);
             }
         } catch (Exception newException) {
         }
     }
+
+
+
+
+
+
+
 
 }
