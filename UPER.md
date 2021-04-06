@@ -8,7 +8,8 @@
 <h2>1. Understanding the Problem</h2>
 *Develop a game that has OOP and OOD properties.
 *I am to make a plan of how to implement the four pillars of OOP into a game app to show that i understand.
-*
+
+* breakout app generally has one life with a scoring system and levels to it.
 
 *Research options and breakdown which project fits best.
 *
@@ -25,7 +26,8 @@
 * i need to add basic game logic such as moving, winning and losing.
   
 * come up with any test to make sure game is running correctly
-*
+  
+* will need scoring system and player life detector.
 *
 <h2>
     3. Executing the Plan
@@ -46,9 +48,10 @@
 
 * Write code in TDD fashion to lead to fewer errors in the future.
   
-*refactor all of my logic classes to run more independently.
-*
+* refactor all of my logic classes to run more independently.
 
-*Do more research before jumping in to have a cleaner finish
+* start slow and remain steady because then the project will come together perfectly
+
+* Do more research before jumping in to have a cleaner finish
 *
 *
