@@ -14,6 +14,7 @@ public class Frames extends JFrame {
     private static final int Height = 600;
     private static final int Width = 300;
 
+
     private Board board = new Board();
 
 

@@ -4,8 +4,7 @@ package game;
 import player.Player;
 import ui.Commons;
 
-import javax.swing.JPanel;
-import javax.swing.Timer;
+import javax.swing.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -29,6 +28,8 @@ public class Board extends JPanel {
     private Brick[] bricks;
     private boolean inGame = true;
     private final Player player = new Player();
+    private int score = 0;
+
 
     public Board() {
 
@@ -93,12 +94,16 @@ public class Board extends JPanel {
         Toolkit.getDefaultToolkit().sync();
     }
 
+
+
     private void drawObjects(Graphics2D g2d) {
 
         g2d.drawImage(ball.getImage(), ball.getX(), ball.getY(),
                 ball.getImageWidth(), ball.getImageHeight(), this);
         g2d.drawImage(paddle.getImage(), paddle.getX(), paddle.getY(),
                 paddle.getImageWidth(), paddle.getImageHeight(), this);
+        g2d.drawString(String.valueOf(score), 200, 500);
+
 
         for (int i = 0; i < Commons.N_OF_BRICKS; i++) {
 
@@ -160,6 +165,12 @@ public class Board extends JPanel {
         inGame = false;
         timer.stop();
     }
+
+    private void score(){
+        score++;
+    }
+
+
 
 
 
@@ -257,7 +268,7 @@ public class Board extends JPanel {
 
                         ball.setYDir(-1);
                     }
-
+                    score++;
                     bricks[i].setDestroyed(true);
                 }
             }
